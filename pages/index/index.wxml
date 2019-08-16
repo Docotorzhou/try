@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="contain-picture" style="height:300px; width:100%;">
+    <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" bindchange="changeDots" style="height:100%">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <view class="desc" bindtap="goDetail" data-id="{{item.id}}">
+            <image src="{{item.photo}}" class="slide-image"/>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="scan">
+    <view class="scan_text">
+      <text class="text">扫商品</text>
+      <text>扫商品条码，快速核验出场</text>
+    </view>
+    <view class="scan_img" bindtap="scan">
+      <image src="../../img/sao.png" style="width:130px;height:130px;" ></image>
+    </view>
+  </view>
+  <view class="shop-box"></view>
+  <view class="shop-inform" bindtap="toShop">
+      <view class="message">
+        <text>购物车</text>
+        <text>加购一步买单</text>
+      </view>
+      <image src="../../img/car.png" style="width:30px; height:30px;"></image>
+  </view>
+  
+</view>

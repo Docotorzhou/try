@@ -1,0 +1,80 @@
+
+<!--pages/shop/shop.wxml-->
+
+<view class="container"  wx:if="{{product.number>0}}">
+  <view class="shop-list">
+    <view class="shop-listTitle">
+      <text>商品</text>
+      <text>编辑</text>
+    </view>
+    <view class="list">
+      <view class="shop-listForm" wx:for="{{category}}" wx:key="key">
+        <view class="listForm-product">
+          <text>{{item.Product.name}}</text>
+          <text class="price">￥{{item.Product.price}}</text>
+        </view> 
+        <view class="listForm-num">
+          <view class="dec" data-type="dec" bindtap="changNum" data-cart_id="{{item.id}}">-</view>
+          <text style="margin:0 20px;">{{item.number}}</text>
+          <view class="inc" data-type="inc" bindtap="changNum" data-cart_id="{{item.id}}">+</view>
+        </view>  
+      </view>
+    </view>
+  </view>
+  <view class="shopping-bag">
+    <view class="bag">购物袋</view>
+    <view class="shoppingBag">
+      <view class="Bag-middle">
+        <view class="Bag-img">
+          <image src="../../img/bag.png" style="height:100px; width:50px;"></image>
+        </view>
+        <view class="Bag-price">
+          <view class="Bag-size">中号￥0.20</view>
+          <view class="Bag-num">
+            <view class="dec" data-type="dec" bindtap="changeBag" >-</view>
+            <text style="margin:0 20px;">{{bagNum}}</text>
+            <view class="inc" data-type="inc" bindtap="changeBag" >+</view>
+          </view>
+        </view>
+      </view>
+      <view class="dotten-line"></view>
+      <view class="Bag-big">
+       <view class="Bag-img">
+          <image src="../../img/bag.png" style="height:100px; width:50px;"></image>
+        </view>
+        <view class="Bag-price">
+          <view class="Bag-size">大号￥0.30</view>
+          <view class="Bag-num">
+            <view class="dec" data-type="dec" bindtap="changeBag" >-</view>
+            <text style="margin:0 20px;">{{bagNum}}</text>
+            <view class="inc" data-type="inc" bindtap="changeBag">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="price">
+    <view class="bill">
+      <text>发票</text>
+      <text>不要发票></text>
+    </view>
+    <view class="Discount">
+      <text>优惠券</text>
+      <text>未使用优惠券></text>
+    </view>  
+    <view class="product-price">
+      <text>商品金额</text>
+      <text>￥{{product.total}}</text>
+    </view>
+  </view>  
+  <view class="total">
+    <image src="../../img/sao1.png" style="width:110px; height:110px;"></image>
+    <view class="Settlement">
+      <text>合計：￥{{product.total}}</text>
+      <text class="count" bindtap="toOrders">結算：({{product.total}})</text>
+    </view>  
+  </view>
+</view>
+<view wx:else bindtap="scan">点我扫码</view>
+
+

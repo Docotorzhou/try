@@ -1,0 +1,48 @@
+page{
+  position: relative;
+}
+.contatiner{
+  background-color: rgb(250, 250, 250);
+}
+
+.invoice{
+  padding: 10px;
+margin-bottom: 10px;
+background-color: white;
+display: flex;
+justify-content: space-between;
+}
+.productPrice{
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+background-color: white;
+padding: 10px;
+}
+.priceLeft{
+  display: flex;
+flex-direction: column;
+}
+.totalPrice{
+  display: flex;
+justify-content: space-between;
+padding: 30px 10px 30px 10px;
+background-color: white;
+}
+.orderFoot{
+display: flex;
+justify-content: space-between;
+width: 100%;
+border-top: 1px solid #eee;
+position: fixed;
+bottom: 0px;
+z-index: 99;
+}
+
+.total{
+  padding: 20px 10px;
+}
+.pay{
+  padding: 20px 40px;
+background-color: yellow;
+}

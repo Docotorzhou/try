@@ -1,0 +1,31 @@
+<!--pages/orders/orders.wxml-->
+<view class="contatiner">
+  <view class="orderConfirm">
+    <view class="invoice">
+      <text>发票</text>
+      <text>不要发票></text>
+    </view>
+    <view class="productList">
+      <view class="productPrice" wx:for="{{category}}" wx:key="key">
+        <view class="priceLeft">
+          <text>{{item.Product.name}}</text>
+          <text style="margin:20px 0;">￥{{item.Product.price}}</text>
+        </view> 
+        <view class="productNum" style="magin-top:20px;">
+        x{{item.number}}
+        </view> 
+      </view>
+      <view class="totalPrice">
+        <text>商品金额</text>
+        <text>{{total.total}}</text>
+      </view>
+    </view>
+    <view class="orderFoot">
+      <view class="total">
+        <text>合计:</text>
+        <text>{{total.total}}</text>     
+      </view>
+      <view class="pay" bindtap="toPay">支付</view>
+    </view>
+  </view>
+</view>
